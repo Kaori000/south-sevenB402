@@ -5,6 +5,7 @@ import java.util.Map;
 
 import cn.yznu.common.annotation.SysLog;
 import cn.yznu.common.validator.ValidatorUtils;
+import io.swagger.annotations.Api;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,7 @@ import cn.yznu.common.utils.R;
  * @email kaoriii@163.com
  * @date 2023-01-06 16:19:54
  */
+@Api(tags = "文件列表")
 @RestController
 @RequestMapping("sys/filelist")
 public class SysFileListController {

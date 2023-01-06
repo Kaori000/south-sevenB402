@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-@Api(tags="文件上传模块")
+@Api(tags="文件上传")
 @RestController
 @RequestMapping("/sys/file")
 public class SysFileUploadController extends AbstractController {

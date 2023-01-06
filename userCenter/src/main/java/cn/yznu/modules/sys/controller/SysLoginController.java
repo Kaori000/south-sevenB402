@@ -36,7 +36,7 @@ import java.util.Date;
 /**
  * 登录相关
  */
-@Api(tags = "登录相关模块")
+@Api(tags = "登录")
 @RestController
 public class SysLoginController {
     @Autowired
