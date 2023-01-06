@@ -1,6 +1,7 @@
 package cn.yznu.modules.sys.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import cn.yznu.common.annotation.SysLog;
@@ -45,6 +46,19 @@ public class SysMenuController {
         PageUtils page = sysMenuService.queryPage(params);
 
         return R.ok().put("page", page);
+    }
+
+    /**
+     * 列表
+     */
+    @SysLog("列表")
+    @GetMapping("/nav")
+    //@RequiresPermissions("sys:sysmenu:list")
+    public R nav(@RequestParam Map<String, Object> params){
+        List<SysMenuEntity> allMenu = sysMenuService.getMenu();
+
+
+        return R.ok().put("menu", allMenu);
     }
 
 
