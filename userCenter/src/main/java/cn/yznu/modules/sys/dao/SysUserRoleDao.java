@@ -1,15 +1,15 @@
 package cn.yznu.modules.sys.dao;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import cn.yznu.modules.sys.entity.SysUserRoleEntity;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
  * 
  * 
- * @author lfh
+ * @author samui
  * @email kaoriii@163.com
- * @date 2021-11-10 14:25:33
+ * @date 2023-01-06 16:19:53
  */
 @Mapper
 public interface SysUserRoleDao extends BaseMapper<SysUserRoleEntity> {

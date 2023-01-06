@@ -1,13 +1,5 @@
 package cn.yznu.modules.sys.service.impl;
 
-import cn.yznu.common.utils.Query;
-import cn.yznu.modules.sys.dao.SysMenuDao;
-import cn.yznu.modules.sys.entity.SysMenuEntity;
-import cn.yznu.modules.sys.service.SysMenuService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import cn.yznu.common.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +7,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import cn.yznu.common.utils.PageUtils;
+import cn.yznu.common.utils.Query;
+
+import cn.yznu.modules.sys.dao.SysMenuDao;
+import cn.yznu.modules.sys.entity.SysMenuEntity;
+import cn.yznu.modules.sys.service.SysMenuService;
+
 
 @Service("sysMenuService")
 public class SysMenuServiceImpl extends ServiceImpl<SysMenuDao, SysMenuEntity> implements SysMenuService {
+
     @Autowired
     SysMenuDao sysMenuDao;
 

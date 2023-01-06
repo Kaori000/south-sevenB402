@@ -1,28 +1,34 @@
 package cn.yznu.modules.sys.controller;
 
-import cn.yznu.common.annotation.SysLog;
-import cn.yznu.modules.sys.entity.SysDeptEntity;
-import cn.yznu.common.utils.PageUtils;
-import cn.yznu.common.utils.R;
-import cn.yznu.common.validator.ValidatorUtils;
-import cn.yznu.modules.sys.service.SysDeptService;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
+
+import cn.yznu.common.annotation.SysLog;
+import cn.yznu.common.validator.ValidatorUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import cn.yznu.modules.sys.entity.SysDeptEntity;
+import cn.yznu.modules.sys.service.SysDeptService;
+import cn.yznu.common.utils.PageUtils;
+import cn.yznu.common.utils.R;
+
 
 
 /**
  * 
  *
- * @author lfh
+ * @author samui
  * @email kaoriii@163.com
- * @date 2021-11-04 21:16:05
+ * @date 2023-01-06 16:19:55
  */
 @RestController
-@RequestMapping("/sys/sysdept")
+@RequestMapping("sys/dept")
 public class SysDeptController {
     @Autowired
     private SysDeptService sysDeptService;
@@ -32,7 +38,7 @@ public class SysDeptController {
      */
     @SysLog("列表")
     @GetMapping("/list")
-    @RequiresPermissions("sys:sysdept:list")
+    @RequiresPermissions("sys:dept:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = sysDeptService.queryPage(params);
 
@@ -45,7 +51,7 @@ public class SysDeptController {
      */
     @SysLog("信息")
     @GetMapping("/info/{id}")
-    @RequiresPermissions("sys:sysdept:info")
+    @RequiresPermissions("sys:dept:info")
     public R info(@PathVariable("id") String id){
         SysDeptEntity sysDept = sysDeptService.getById(id);
 
@@ -57,7 +63,7 @@ public class SysDeptController {
      */
     @SysLog("保存")
     @PostMapping("/save")
-    @RequiresPermissions("sys:sysdept:save")
+    @RequiresPermissions("sys:dept:save")
     public R save(@RequestBody SysDeptEntity sysDept){
         sysDeptService.save(sysDept);
 
@@ -69,7 +75,7 @@ public class SysDeptController {
      */
     @SysLog("修改")
     @PatchMapping("/update")
-    @RequiresPermissions("sys:sysdept:update")
+    @RequiresPermissions("sys:dept:update")
     public R update(@RequestBody SysDeptEntity sysDept){
         ValidatorUtils.validateEntity(sysDept);
         sysDeptService.updateById(sysDept);
@@ -82,7 +88,7 @@ public class SysDeptController {
      */
     @SysLog("删除")
     @DeleteMapping("/delete")
-    @RequiresPermissions("sys:sysdept:delete")
+    @RequiresPermissions("sys:dept:delete")
     public R delete(@RequestBody String[] ids){
         sysDeptService.removeByIds(Arrays.asList(ids));
 

@@ -41,7 +41,7 @@ public class SwaggerConfig{
         return new Docket(DocumentationType.SWAGGER_2).groupName("系统模块")
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.sys.controller"))
+                .apis(RequestHandlerSelectors.basePackage("cn.yznu.modules.sys.controller"))
                 .paths(PathSelectors.ant("/sys/**"))
                 .build();
     }

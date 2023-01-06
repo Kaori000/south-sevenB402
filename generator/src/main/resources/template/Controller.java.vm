@@ -3,8 +3,8 @@ package ${package}.${moduleName}.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import SysLog;
-import ValidatorUtils;
+import cn.yznu.common.annotation.SysLog;
+import cn.yznu.common.validator.ValidatorUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +27,6 @@ import ${mainPath}.common.utils.R;
  * @email ${email}
  * @date ${datetime}
  */
-@Api(tags = "登录相关模块")
 @RestController
 @RequestMapping("${moduleName}/${pathName}")
 public class ${className}Controller {

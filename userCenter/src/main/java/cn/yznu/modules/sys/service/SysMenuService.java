@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
+ * 菜单管理
  *
- * @author lfh
+ * @author samui
  * @email kaoriii@163.com
- * @date 2021-11-04 21:16:05
+ * @date 2023-01-06 16:19:54
  */
 public interface SysMenuService extends IService<SysMenuEntity> {
 
@@ -21,6 +21,5 @@ public interface SysMenuService extends IService<SysMenuEntity> {
     List<SysMenuEntity> getMenuList();
 
     List<SysMenuEntity> getMenu();
-
 }
 

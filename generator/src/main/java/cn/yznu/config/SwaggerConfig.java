@@ -28,7 +28,7 @@ public class SwaggerConfig {
 				.termsOfServiceUrl("http://localost:8082").version(version).build();
 
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo).select()
-				.apis(RequestHandlerSelectors.basePackage("cn.runget.controller"))
+				.apis(RequestHandlerSelectors.basePackage("cn.yznu.controller"))
 				.paths(PathSelectors.any()).build();
 	}
 }

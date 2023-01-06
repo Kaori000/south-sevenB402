@@ -1,28 +1,34 @@
 package cn.yznu.modules.sys.controller;
 
+import java.util.Arrays;
+import java.util.Map;
+
 import cn.yznu.common.annotation.SysLog;
+import cn.yznu.common.validator.ValidatorUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
 import cn.yznu.modules.sys.entity.SysRoleDeptEntity;
 import cn.yznu.modules.sys.service.SysRoleDeptService;
 import cn.yznu.common.utils.PageUtils;
 import cn.yznu.common.utils.R;
-import cn.yznu.common.validator.ValidatorUtils;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
-import java.util.Map;
 
 
 /**
  * 
  *
- * @author lfh
+ * @author samui
  * @email kaoriii@163.com
- * @date 2021-11-04 21:16:05
+ * @date 2023-01-06 16:19:54
  */
 @RestController
-@RequestMapping("/sys/sysroledept")
+@RequestMapping("sys/roledept")
 public class SysRoleDeptController {
     @Autowired
     private SysRoleDeptService sysRoleDeptService;
@@ -32,7 +38,7 @@ public class SysRoleDeptController {
      */
     @SysLog("列表")
     @GetMapping("/list")
-    @RequiresPermissions("sys:sysroledept:list")
+    @RequiresPermissions("sys:roledept:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = sysRoleDeptService.queryPage(params);
 
@@ -45,7 +51,7 @@ public class SysRoleDeptController {
      */
     @SysLog("信息")
     @GetMapping("/info/{roleId}")
-    @RequiresPermissions("sys:sysroledept:info")
+    @RequiresPermissions("sys:roledept:info")
     public R info(@PathVariable("roleId") String roleId){
         SysRoleDeptEntity sysRoleDept = sysRoleDeptService.getById(roleId);
 
@@ -57,7 +63,7 @@ public class SysRoleDeptController {
      */
     @SysLog("保存")
     @PostMapping("/save")
-    @RequiresPermissions("sys:sysroledept:save")
+    @RequiresPermissions("sys:roledept:save")
     public R save(@RequestBody SysRoleDeptEntity sysRoleDept){
         sysRoleDeptService.save(sysRoleDept);
 
@@ -69,7 +75,7 @@ public class SysRoleDeptController {
      */
     @SysLog("修改")
     @PatchMapping("/update")
-    @RequiresPermissions("sys:sysroledept:update")
+    @RequiresPermissions("sys:roledept:update")
     public R update(@RequestBody SysRoleDeptEntity sysRoleDept){
         ValidatorUtils.validateEntity(sysRoleDept);
         sysRoleDeptService.updateById(sysRoleDept);
@@ -82,7 +88,7 @@ public class SysRoleDeptController {
      */
     @SysLog("删除")
     @DeleteMapping("/delete")
-    @RequiresPermissions("sys:sysroledept:delete")
+    @RequiresPermissions("sys:roledept:delete")
     public R delete(@RequestBody String[] roleIds){
         sysRoleDeptService.removeByIds(Arrays.asList(roleIds));
 

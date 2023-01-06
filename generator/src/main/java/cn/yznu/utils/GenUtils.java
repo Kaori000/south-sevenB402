@@ -105,7 +105,7 @@ public class GenUtils {
 		map.put("pk", tableEntity.getPk());
 		map.put("className", tableEntity.getClassName());
 		map.put("classname", tableEntity.getClassname());
-		map.put("pathName", tableEntity.getClassname().toLowerCase());
+		map.put("pathName", tableEntity.getClassname().toLowerCase().substring(config.getString("moduleName" ).length()));
 		map.put("columns", tableEntity.getColumns());
 		map.put("hasBigDecimal", hasBigDecimal);
 		map.put("mainPath", mainPath);
