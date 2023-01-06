@@ -36,27 +36,6 @@ public class SwaggerConfig{
             .securitySchemes(securitySchemes());
     }
 
-
-//    @Bean
-//    public Docket iotApi() {
-//        return new Docket(DocumentationType.SWAGGER_2).groupName("平台模块")
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.iot.controller"))
-//                .paths(PathSelectors.ant("/iot/**"))
-//                .build();
-//    }
-
-    @Bean
-    public Docket jobApi() {
-        return new Docket(DocumentationType.SWAGGER_2).groupName("定时模块")
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.job.controller"))
-                .paths(PathSelectors.ant("/sys/**"))
-                .build();
-    }
-
     @Bean
     public Docket sysApi() {
         return new Docket(DocumentationType.SWAGGER_2).groupName("系统模块")
@@ -67,80 +46,13 @@ public class SwaggerConfig{
                 .build();
     }
 
-//    @Bean
-//    public Docket fileApi() {
-//        return new Docket(DocumentationType.SWAGGER_2).groupName("aliyun文件上传")
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.oss.controller"))
-//                .paths(PathSelectors.ant("/file/**"))
-//                .build();
-//    }
 
-//    @Bean
-//    public Docket smartcityApi() {
-//        return new Docket(DocumentationType.SWAGGER_2).groupName("云脑模块")
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.smartcity.controller"))
-//                .paths(PathSelectors.ant("/smartcity/**"))
-//                .build();
-//    }
-
-//    @Bean
-//    public Docket poiFileApi() {
-//        return new Docket(DocumentationType.SWAGGER_2).groupName("文件模块")
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.file.controller"))
-//                .paths(PathSelectors.ant("/poi/**"))
-//                .build();
-//    }
-
-    @Bean
-    public Docket logApi() {
-        return new Docket(DocumentationType.SWAGGER_2).groupName("日志模块")
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.log.controller"))
-                .paths(PathSelectors.ant("/log/**"))
-                .build();
-    }
-
-    @Bean
-    public Docket disputeApi() {
-        return new Docket(DocumentationType.SWAGGER_2).groupName("纠纷模块")
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.dispute.controller"))
-                .paths(PathSelectors.ant("/dispute/**"))
-                .build();
-    }
-
-    @Bean
-    public Docket adviserApi() {
-        return new Docket(DocumentationType.SWAGGER_2).groupName("顾问模块")
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.adviser.controller"))
-                .paths(PathSelectors.ant("/adviser/**"))
-                .build();
-    }
-    @Bean
-    public Docket abilityApi() {
-        return new Docket(DocumentationType.SWAGGER_2).groupName("赋能平台")
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.runget.modules.ability.controller"))
-                .paths(PathSelectors.ant("/ability/**"))
-                .build();
-    }
 
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
             .title("云脑 smartcity")
-            .description("iotcloud-admin文档")
+            .description("api文档")
             .termsOfServiceUrl("http://www.runget.cn")
             .version("1.0.0")
             .build();
