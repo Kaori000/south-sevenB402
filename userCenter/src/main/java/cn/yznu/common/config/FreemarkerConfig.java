@@ -2,6 +2,7 @@ package cn.yznu.common.config;
 
 import cn.yznu.modules.sys.shiro.ShiroTag;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import java.util.Properties;
  * Freemarker配置
  *
  */
-//@Configuration
+@Configuration
 public class FreemarkerConfig {
 
     @Bean

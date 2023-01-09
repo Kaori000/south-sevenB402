@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.session.web.http.DefaultCookieSerializer;
 import org.springframework.util.StringUtils;
 
 import javax.servlet.Filter;
@@ -63,6 +64,14 @@ public class ShiroConfig {
         securityManager.setRememberMeManager(null);
 
         return securityManager;
+    }
+    /**
+     * 解决Spring Session 产生的SessionId与cookies中的SessionId不一致问题
+     * @return
+     */
+    @Bean
+    public DefaultCookieSerializer defaultCookieSerializer(){
+        return new MyDefaultCookieSerializer();
     }
 
 
